@@ -55,3 +55,15 @@ button:active {
 	color: #fff;
 	background-color: #000;
 }
+
+@media only screen and(max-width: 768px) {
+	main {
+		width: 70%;
+	}
+}
+
+@media only screen and(max-width: 480px) {
+	main {
+		width: 90%;
+	}
+}
