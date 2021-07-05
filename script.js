@@ -1,4 +1,4 @@
-require('regenerator-runtime/runtime');
+import "babel-polyfill";
 const axios = require("axios");
 
 
@@ -16,7 +16,7 @@ const xhrRequestHandler = () => {
 	// create xhr object
 	const xhr = new XMLHttpRequest();
 
-	// established a connection to server api
+	// established a connection to se
 	xhr.open(method, uri, isAsync);
 
 	// handling data onload
@@ -47,10 +47,10 @@ xhrBtn.addEventListener("click", (e) => {
 
 
 // fetch api handler
-const fetchApiHandler = () => {
+const fetchApiHandler = async () => {
 	const fetchUri = "https://jsonplaceholder.typicode.com/users";
 	const fetchMethod = "GET";
-	fetch(fetchUri, {
+	await fetch(fetchUri, {
 			method: fetchMethod
 		})
 		.then(res => res.json())
@@ -74,9 +74,9 @@ fetchBtn.addEventListener("click", (e) => {
 
 
 // axios api handler
-const axiosApiHandler = () => {
+const axiosApiHandler = async () => {
 	const todosUri = "https://jsonplaceholder.typicode.com/todos";
-	axios.get(todosUri).then(res => {
+	await axios.get(todosUri).then(res => {
 		const todos = res.data.splice(0, 5)
 		todos.map(todo => {
 			axios__container.innerHTML += `<ul class="user">
